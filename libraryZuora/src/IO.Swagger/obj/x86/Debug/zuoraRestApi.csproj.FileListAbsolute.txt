@@ -1,0 +1,1 @@
+C:\Users\991443\Downloads\codelibrary-dotnet-master\src\IO.Swagger\obj\x86\Debug\zuoraRestApi.csprojResolveAssemblyReference.cache

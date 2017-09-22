@@ -1,0 +1,9 @@
+C:\Users\991443\Downloads\restC#\codelibrary-dotnet-master\src\IO.Swagger\bin\Release\IO.Swagger.dll
+C:\Users\991443\Downloads\restC#\codelibrary-dotnet-master\src\IO.Swagger\bin\Release\IO.Swagger.pdb
+C:\Users\991443\Downloads\restC#\codelibrary-dotnet-master\src\IO.Swagger\bin\Release\Newtonsoft.Json.dll
+C:\Users\991443\Downloads\restC#\codelibrary-dotnet-master\src\IO.Swagger\bin\Release\RestSharp.dll
+C:\Users\991443\Downloads\restC#\codelibrary-dotnet-master\src\IO.Swagger\bin\Release\Newtonsoft.Json.xml
+C:\Users\991443\Downloads\restC#\codelibrary-dotnet-master\src\IO.Swagger\bin\Release\RestSharp.xml
+C:\Users\991443\Downloads\restC#\codelibrary-dotnet-master\src\IO.Swagger\obj\Release\IO.Swagger.dll
+C:\Users\991443\Downloads\restC#\codelibrary-dotnet-master\src\IO.Swagger\obj\Release\IO.Swagger.pdb
+C:\Users\991443\Downloads\restC#\codelibrary-dotnet-master\src\IO.Swagger\obj\Release\IO.Swagger.csprojResolveAssemblyReference.cache
