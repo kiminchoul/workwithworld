@@ -49,7 +49,9 @@ namespace IO.Swagger.Model
         //public ZObjectPayDef(string Id = null, string DefaultpaymentMethodId = null, string Name = null, string Notes = null, DateTime? ContractAcceptanceDate = null, DateTime? ServiceActivationDate = null)
         //subscription.status 更新専用とする
         //public ZObjectPayDef(string Id = null, DateTime? ContractAcceptanceDate = null, DateTime? ServiceActivationDate = null)
-        public ZObjectPayDef(string Id = null, string ContractAcceptanceDate = null, string ServiceActivationDate = null)
+        public ZObjectPayDef(string Id = null, string ContractAcceptanceDate = null, string ServiceActivationDate = null
+            , string OfferDate__c = null, string LicenseOfferDate__c = null, string BillingStartDate__c = null, string TrialOfferDate__c = null
+            , string UserPriceTotal__c = null, string UserPrice__c = null, string EffectivePriceTotal__c = null, string ListPriceTotal__c = null)
         {
             this.Id = Id;
             //this.DefaultpaymentMethodId = DefaultpaymentMethodId;
@@ -57,6 +59,14 @@ namespace IO.Swagger.Model
             //this.Notes = Notes;
             this.ContractAcceptanceDate = ContractAcceptanceDate;
             this.ServiceActivationDate = ServiceActivationDate;
+            this.OfferDate__c = OfferDate__c; //サブ カスタム項目
+            this.LicenseOfferDate__c = LicenseOfferDate__c; //サブ カスタム項目
+            this.BillingStartDate__c = BillingStartDate__c; //サブ カスタム項目
+            this.TrialOfferDate__c = TrialOfferDate__c; //サブ カスタム項目
+            this.UserPriceTotal__c = UserPriceTotal__c; //RatePlanCharge カスタム項目
+            this.UserPrice__c = UserPrice__c; //RatePlanCharge カスタム項目
+            this.EffectivePriceTotal__c = EffectivePriceTotal__c; //RatePlanCharge カスタム項目
+            this.ListPriceTotal__c = ListPriceTotal__c; //RatePlanCharge カスタム項目
         }
 
         /// <summary>
@@ -71,22 +81,43 @@ namespace IO.Swagger.Model
         /// <value></value>
         //[DataMember(Name= "DefaultpaymentMethodId", EmitDefaultValue=false)]
         //public string DefaultpaymentMethodId { get; set; }
-
         //[DataMember(Name = "Name", EmitDefaultValue = false)]
         //public string Name { get; set; }
-
         //[DataMember(Name = "Notes", EmitDefaultValue = false)]
         //public string Notes { get; set; }
-
         //[DataMember(Name = "ContractAcceptanceDate", EmitDefaultValue = false)]
         //public DateTime? ContractAcceptanceDate { get; set; }
         //[DataMember(Name = "ServiceActivationDate", EmitDefaultValue = false)]
         //public DateTime? ServiceActivationDate { get; set; }
-
         [DataMember(Name = "ContractAcceptanceDate", EmitDefaultValue = false)]
         public string ContractAcceptanceDate { get; set; }
         [DataMember(Name = "ServiceActivationDate", EmitDefaultValue = false)]
         public string ServiceActivationDate { get; set; }
+        //サブ カスタム項目
+        [DataMember(Name = "OfferDate__c", EmitDefaultValue = false)]
+        public string OfferDate__c { get; set; }
+        //サブ カスタム項目
+        [DataMember(Name = "LicenseOfferDate__c", EmitDefaultValue = false)]
+        public string LicenseOfferDate__c { get; set; }
+        //サブ カスタム項目
+        [DataMember(Name = "BillingStartDate__c", EmitDefaultValue = false)]
+        public string BillingStartDate__c { get; set; }
+        //サブ カスタム項目
+        [DataMember(Name = "TrialOfferDate__c", EmitDefaultValue = false)]
+        public string TrialOfferDate__c { get; set; }
+        //RatePlanCharge カスタム項目
+        [DataMember(Name = "UserPriceTotal__c", EmitDefaultValue = false)]
+        public string UserPriceTotal__c { get; set; }
+        //RatePlanCharge カスタム項目
+        [DataMember(Name = "UserPrice__c", EmitDefaultValue = false)]
+        public string UserPrice__c { get; set; }
+        //RatePlanCharge カスタム項目
+        [DataMember(Name = "EffectivePriceTotal__c", EmitDefaultValue = false)]
+        public string EffectivePriceTotal__c { get; set; }
+        //RatePlanCharge カスタム項目
+        [DataMember(Name = "ListPriceTotal__c", EmitDefaultValue = false)]
+        public string ListPriceTotal__c { get; set; }
+
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -103,6 +134,14 @@ namespace IO.Swagger.Model
             //sb.Append("  Notes: ").Append(Notes).Append("\n");
             sb.Append("  ContractAcceptanceDate: ").Append(ContractAcceptanceDate).Append("\n");
             sb.Append("  ServiceActivationDate: ").Append(ServiceActivationDate).Append("\n");
+            sb.Append("  OfferDate__c: ").Append(OfferDate__c).Append("\n");//サブ カスタム項目
+            sb.Append("  LicenseOfferDate__c: ").Append(LicenseOfferDate__c).Append("\n");//サブ カスタム項目
+            sb.Append("  BillingStartDate__c: ").Append(BillingStartDate__c).Append("\n");//サブ カスタム項目
+            sb.Append("  TrialOfferDate__c: ").Append(TrialOfferDate__c).Append("\n");//サブ カスタム項目
+            sb.Append("  UserPriceTotal__c: ").Append(UserPriceTotal__c).Append("\n");//RatePlanCharge カスタム項目
+            sb.Append("  UserPrice__c: ").Append(UserPrice__c).Append("\n");//RatePlanCharge カスタム項目
+            sb.Append("  EffectivePriceTotal__c: ").Append(EffectivePriceTotal__c).Append("\n");//RatePlanCharge カスタム項目
+            sb.Append("  ListPriceTotal__c: ").Append(ListPriceTotal__c).Append("\n");//RatePlanCharge カスタム項目
             sb.Append("}\n");            
             return sb.ToString();
         }
@@ -153,12 +192,51 @@ namespace IO.Swagger.Model
                     this.ContractAcceptanceDate == other.ContractAcceptanceDate ||
                     this.ContractAcceptanceDate != null &&
                     this.ContractAcceptanceDate.Equals(other.ContractAcceptanceDate)
-
                 ) &&
                 (
                     this.ServiceActivationDate == other.ServiceActivationDate ||
                     this.ServiceActivationDate != null &&
                     this.ServiceActivationDate.Equals(other.ServiceActivationDate)
+                ) &&
+                (
+                    this.OfferDate__c == other.OfferDate__c ||
+                    this.OfferDate__c != null &&
+                    this.OfferDate__c.Equals(other.OfferDate__c)
+                ) &&
+                (
+                    this.LicenseOfferDate__c == other.LicenseOfferDate__c ||
+                    this.LicenseOfferDate__c != null &&
+                    this.LicenseOfferDate__c.Equals(other.LicenseOfferDate__c)
+                ) &&
+                (
+                    this.BillingStartDate__c == other.BillingStartDate__c ||
+                    this.BillingStartDate__c != null &&
+                    this.BillingStartDate__c.Equals(other.BillingStartDate__c)
+                ) &&
+                (
+                    this.TrialOfferDate__c == other.TrialOfferDate__c ||
+                    this.TrialOfferDate__c != null &&
+                    this.TrialOfferDate__c.Equals(other.TrialOfferDate__c)
+                ) &&
+                (
+                    this.UserPriceTotal__c == other.UserPriceTotal__c ||
+                    this.UserPriceTotal__c != null &&
+                    this.UserPriceTotal__c.Equals(other.UserPriceTotal__c)
+                ) &&
+                (
+                    this.UserPrice__c == other.UserPrice__c ||
+                    this.UserPrice__c != null &&
+                    this.UserPrice__c.Equals(other.UserPrice__c)
+                ) &&
+                (
+                    this.EffectivePriceTotal__c == other.EffectivePriceTotal__c ||
+                    this.EffectivePriceTotal__c != null &&
+                    this.EffectivePriceTotal__c.Equals(other.EffectivePriceTotal__c)
+                ) &&
+                (
+                    this.ListPriceTotal__c == other.ListPriceTotal__c ||
+                    this.ListPriceTotal__c != null &&
+                    this.ListPriceTotal__c.Equals(other.ListPriceTotal__c)
                 );
         }
 
@@ -181,6 +259,22 @@ namespace IO.Swagger.Model
                     hash = hash * 59 + this.ContractAcceptanceDate.GetHashCode();
                 if (this.ServiceActivationDate != null)
                     hash = hash * 59 + this.ServiceActivationDate.GetHashCode();
+                if (this.OfferDate__c != null)
+                    hash = hash * 59 + this.OfferDate__c.GetHashCode();
+                if (this.LicenseOfferDate__c != null)
+                    hash = hash * 59 + this.LicenseOfferDate__c.GetHashCode();
+                if (this.BillingStartDate__c != null)
+                    hash = hash * 59 + this.BillingStartDate__c.GetHashCode();
+                if (this.TrialOfferDate__c != null)
+                    hash = hash * 59 + this.TrialOfferDate__c.GetHashCode();
+                if (this.UserPriceTotal__c != null)
+                    hash = hash * 59 + this.UserPriceTotal__c.GetHashCode();
+                if (this.UserPrice__c != null)
+                    hash = hash * 59 + this.UserPrice__c.GetHashCode();
+                if (this.EffectivePriceTotal__c != null)
+                    hash = hash * 59 + this.EffectivePriceTotal__c.GetHashCode();
+                if (this.ListPriceTotal__c != null)
+                    hash = hash * 59 + this.ListPriceTotal__c.GetHashCode();
                 return hash;
             }
         }

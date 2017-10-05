@@ -62,7 +62,7 @@ namespace IO.Swagger.Model
         /// <param name="Tiers">Container for Volume, Tiered or Tiered with Overage charge models. Supports the following charge types:  * One-time * Recurring * Usage-based .</param>
         /// <param name="TriggerDate">Specifies when to start billing the customer for the charge. Required if the &#x60;triggerEvent&#x60; field is set to USD.  &#x60;triggerDate&#x60; cannot be updated for the following using the REST update subscription call:  * One-time charge type * Discount-Fixed Amount charge model * Discount-Percentage charge model .</param>
         /// <param name="TriggerEvent">Specifies when to start billing the customer for the charge.  Values:  * &#x60;UCE&#x60; * &#x60;USA&#x60; * &#x60;UCA&#x60; * &#x60;USD&#x60;  This is the date when charge changes in the REST request become effective.  &#x60;triggerEvent&#x60; cannot be updated for the following using the REST update subscription call:  * One-time charge type * Discount-Fixed Amount charge model * Discount-Percentage charge model .</param>
-        public PUTScUpdateType(string BillingPeriodAlignment = null, string CustomFieldC = null, string Description = null, string IncludedUnits = null, string OveragePrice = null, string Price = null, string PriceChangeOption = null, string PriceIncreasePercentage = null, string Quantity = null, string RatePlanChargeId = null, List<POSTTierType> Tiers = null, DateTime? TriggerDate = null, string TriggerEvent = null, string UserPrice__c = null, string EffectivePriceTotal__c = null, string UserPriceTotal__c = null)
+        public PUTScUpdateType(string BillingPeriodAlignment = null, string CustomFieldC = null, string Description = null, string IncludedUnits = null, string OveragePrice = null, string Price = null, string PriceChangeOption = null, string PriceIncreasePercentage = null, string Quantity = null, string RatePlanChargeId = null, List<POSTTierType> Tiers = null, DateTime? TriggerDate = null, string TriggerEvent = null, string UserPrice__c = null, string EffectivePriceTotal__c = null, string UserPriceTotal__c = null, string ListPriceTotal__c = null)
         {
             /**
             // to ensure "RatePlanChargeId" is required (not null)
@@ -92,6 +92,7 @@ namespace IO.Swagger.Model
             this.UserPrice__c = UserPrice__c;  //カスタム項目
             this.EffectivePriceTotal__c = EffectivePriceTotal__c;  //カスタム項目
             this.UserPriceTotal__c = UserPriceTotal__c;  //カスタム項目
+            this.ListPriceTotal__c = ListPriceTotal__c;  //カスタム項目
         }
         
         /// <summary>
@@ -179,6 +180,8 @@ namespace IO.Swagger.Model
         public string EffectivePriceTotal__c { get; set; }
         [DataMember(Name = "UserPriceTotal__c", EmitDefaultValue = false)]
         public string UserPriceTotal__c { get; set; }
+        [DataMember(Name = "ListPriceTotal__c", EmitDefaultValue = false)]
+        public string ListPriceTotal__c { get; set; }
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
@@ -203,6 +206,7 @@ namespace IO.Swagger.Model
             sb.Append("  UserPrice__c: ").Append(UserPrice__c).Append("\n");
             sb.Append("  EffectivePriceTotal__c: ").Append(EffectivePriceTotal__c).Append("\n");
             sb.Append("  UserPriceTotal__c: ").Append(UserPriceTotal__c).Append("\n");
+            sb.Append("  ListPriceTotal__c: ").Append(ListPriceTotal__c).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -318,6 +322,11 @@ namespace IO.Swagger.Model
                     this.UserPriceTotal__c == other.UserPriceTotal__c ||
                     this.UserPriceTotal__c != null &&
                     this.UserPriceTotal__c.Equals(other.UserPriceTotal__c)
+                ) &&
+                (
+                    this.ListPriceTotal__c == other.ListPriceTotal__c ||
+                    this.ListPriceTotal__c != null &&
+                    this.ListPriceTotal__c.Equals(other.ListPriceTotal__c)
                 );
         }
 
@@ -364,6 +373,8 @@ namespace IO.Swagger.Model
                     hash = hash * 59 + this.EffectivePriceTotal__c.GetHashCode();
                 if (this.UserPriceTotal__c != null)
                     hash = hash * 59 + this.UserPriceTotal__c.GetHashCode();
+                if (this.ListPriceTotal__c != null)
+                    hash = hash * 59 + this.ListPriceTotal__c.GetHashCode();
                 return hash;
             }
         }
